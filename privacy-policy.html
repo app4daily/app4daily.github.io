@@ -4,7 +4,7 @@
       <meta charset='utf-8'>
       <meta name='viewport' content='width=device-width'>
       <title>Privacy Policy</title>
-      <style> body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding:1em; } </style>
+      <style> body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding:1em; } </style>	  
     </head>
     <body>
     <h2>Privacy Policy</h2> <p> DEV_NAME built the APP_NAME app as an Ad Supported app. This SERVICE is provided by
@@ -56,5 +56,19 @@
                     me.
                   </p> 
     </body>
+	<script>
+		let params = (new URL(document.location)).searchParams;
+		let appId = params.get("id");
+		var appList = {
+			"com.app4daily.app1" : "Learn English" 
+		}
+		var devName = "app4daily"
+		var appName = appList[appId] || ""
+		var body = document.body.innerHTML
+		body = body.replace(/DEV_NAME/g,devName)
+		body = body.replace(/APP_NAME/g,appName)
+		document.body.innerHTML = body
+		console.log(body)
+	  </script>
     </html>
       
